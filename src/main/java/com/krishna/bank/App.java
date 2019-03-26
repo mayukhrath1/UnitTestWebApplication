@@ -4,8 +4,8 @@
 package com.krishna.bank;
 
 /**
- * @author Arunangsu
- *
+ * @author Arunangsu Sahu
+ * V1.0
  */
 public class App {
 
