@@ -6,6 +6,7 @@ pipeline {
         sh 'mvn test package'
       }
     }
+}
     stage('docker_build') {
       steps {
         sh 'docker build -t mavendocker:latest .'
@@ -23,6 +24,8 @@ docker push 1234567abcdefg/mavendocker'''
         sh 'mysql -hlocalhost -t -v -uroot -pabc123 -Dtest_db < "/home/abzooba/.jenkins/workspace/MavenDockerApp_master/testclear.sql"'
       }
     }
+   Stage('publish')
+{
    post {
       always {
         junit '**/target/surefire-reports/*.xml'
