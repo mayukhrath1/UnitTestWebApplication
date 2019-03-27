@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'mvn package'
+        sh 'mvn test package'
       }
     }
     stage('docker_build') {
