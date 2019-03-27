@@ -23,5 +23,10 @@ docker push 1234567abcdefg/mavendocker'''
         sh 'mysql -hlocalhost -t -v -uroot -pabc123 -Dtest_db < "/home/abzooba/.jenkins/workspace/MavenDockerApp_master/testclear.sql"'
       }
     }
+   post {
+      always {
+        junit '**/target/surefire-reports/*.xml'
+      }
+   } 
   }
 }
