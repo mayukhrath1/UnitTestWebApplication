@@ -10,9 +10,10 @@ pipeline {
         }
         stage('Sonar_scan') {
           steps {
-            sh '''withSonarQubeEnv(\'Sonar_service\') {
-             sh \'mvn clean package sonar:sonar\'
-                    }'''
+                withSonarQubeEnv('Sonar_service') {
+                    // Optionally use a Maven environment you've configured already
+                        sh 'mvn clean package sonar:sonar'
+                }
             }
           }
         }
